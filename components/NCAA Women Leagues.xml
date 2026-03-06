@@ -4,6 +4,7 @@
      <LeagueListItemData name="Basketball" url="http://site.web.api.espn.com/apis/site/v2/sports/basketball/womens-college-basketball/scoreboard" query="groups=50"/> 
      <LeagueListItemData name="Volleyball" url="http://site.web.api.espn.com/apis/site/v2/sports/volleyball/womens-college-volleyball/scoreboard"/>
      <LeagueListItemData name="Soccer" url="http://site.web.api.espn.com/apis/site/v2/sports/soccer/usa.ncaa.w.1/scoreboard"/>  
+     <LeagueListItemData name="Hockey" url="http://site.api.espn.com/apis/site/v2/sports/hockey/womens-college-hockey/scoreboard"/>    
      <LeagueListItemData name="Softball" url="http://site.api.espn.com/apis/site/v2/sports/baseball/college-softball/scoreboard"/>  
   </children>
 </component>

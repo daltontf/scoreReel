@@ -2,6 +2,7 @@
 <component name="Hockey Leagues" extends="ContentNode">
   <children>
      <LeagueListItemData name="NHL" url="http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard"/>
-     <LeagueListItemData name="NCAA Men" url="http://site.api.espn.com/apis/site/v2/sports/hockey/mens-college-hockey/scoreboard"/>   
+     <LeagueListItemData name="NCAA Men" url="http://site.api.espn.com/apis/site/v2/sports/hockey/mens-college-hockey/scoreboard"/> 
+     <LeagueListItemData name="NCAA Women" url="http://site.api.espn.com/apis/site/v2/sports/hockey/womens-college-hockey/scoreboard"/>    
   </children>
 </component>

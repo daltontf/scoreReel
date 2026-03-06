@@ -3,5 +3,6 @@
   <children>
     <LeagueListItemData name="MLB" url="http://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard"/> 
     <LeagueListItemData name="NCAA" url="http://site.api.espn.com/apis/site/v2/sports/baseball/college-baseball/scoreboard"/> 
+    <LeagueListItemData name="World Baseball Classic" url="http://site.api.espn.com/apis/site/v2/sports/baseball/world-baseball-classic/scoreboard"/>
   </children>
 </component>
