@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="NameListItem" extends="Group">
+ 
+  <interface> 
+    <field id="itemContent" type="node" onChange="itemContentChanged"/>
+  </interface>
+ 
+  <script type="text/brightscript" uri="pkg:/components/scores/NameListItem.brs" />
+
+  <children> 
+    <LayoutGroup layoutDirection="horiz" vertAlignment="bottom" itemSpacings="[0,0]" translation="[0,25]" >
+      <Label id="name" font="font:SmallSystemFont" width="600" color="0xffff00ff" />
+    </LayoutGroup>
+  </children>
+
+</component>

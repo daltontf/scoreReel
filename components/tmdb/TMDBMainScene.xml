@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<component name="TMDBMainScene" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/tmdb/TMDBMainScene.brs" />
+
+     <children>
+        <MarkupList
+          id="ListMarkupList"
+          itemComponentName="ListListItem"
+          itemSize="[250, 30]"
+          itemSpacing="[0, 8]"
+          translation="[100,50]"
+          focusBitmapBlendColor = "0x99999999" 
+          numRows = "4"
+      >
+          <ContentNode role="content">
+            <ListListItemData name="Watchlist Movies" list_type="watchlist" media_type="movies"/>     
+            <ListListItemData name="Watchlist TV" list_type="watchlist" media_type="tv"/>  
+            <ListListItemData name="Favorite Movies" list_type="favorite" media_type="movies"/>     
+            <ListListItemData name="Favorite TV" list_type="favorite" media_type="tv"/>    
+            <ListListItemData name="Rated Movies" list_type="rated" media_type="movies"/>     
+            <ListListItemData name="Rated TV" list_type="rated" media_type="tv"/>          
+          </ContentNode>
+        </MarkupList>
+
+        <ScrollableText
+          id="details"
+          width="840"
+          height="200"
+          font = "font:SmallSystemFont"
+          translation="[380, 40]" />
+
+        <!-- <LayoutGroup id="sortButtons" layoutDirection="horizontal" translation="[25, 215]" itemSpacings="[0,0]">
+          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Title" minWidth="500" maxWidth="500"/>
+          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Popularity" minWidth="100" maxWidth="100"/>
+          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Rating" minWidth="100" maxWidth="100"/>
+          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Release Date" minWidth="200" maxWidth="200"/>
+        </LayoutGroup> -->
+
+        <MarkupList
+          id="MediaMarkupList"
+          itemComponentName="MediaListItem"
+          itemSize="[1080, 25]"
+          itemSpacing="[0, 8]"
+          translation="[100,260]"
+          focusBitmapBlendColor = "0x99999999" 
+        />
+    </children> 
+
+</component>

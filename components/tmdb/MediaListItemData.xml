@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MediaListItemData" extends="ContentNode">
+ 
+  <interface> 
+    <field id="id" type="int" />
+    <field id="media_type" type="string" />
+    <field id="title" type="string" />
+    <field id="popularity" type="string" />
+    <field id="vote_average" type="string" />
+    <field id="release_date" type="string" />
+  </interface>
+
+</component>

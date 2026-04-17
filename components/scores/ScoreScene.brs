@@ -3,7 +3,7 @@ function init()
     m.leagueMarkupList = m.top.findNode("LeagueMarkupList")
     m.scoreMarkupList = m.top.findNode("ScoreMarkupList")
 
-    m.fetchJsonTask = CreateObject("roSGNode", "FetchJsonTask")
+    m.fetchJsonTask = CreateObject("roSGNode", "FetchEspnJsonTask")
     m.fetchJsonTask.ObserveField("content", "setScoreContent")
     m.fetchJsonTask.date_offset = 0  
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MediaListItem" extends="Group">
+ 
+  <interface> 
+    <field id="itemContent" type="node" onChange="itemContentChanged"/>
+  </interface>
+ 
+  <script type="text/brightscript" uri="pkg:/components/tmdb/MediaListItem.brs" />
+
+  <children> 
+    <LayoutGroup layoutDirection="horiz" vertAlignment="bottom" itemSpacings="[0, 0]" translation="[0,25]" >
+      <Label id="title" font="font:SmallestSystemFont" width="500" color="0xffff00ff" />
+      <Label id="popularity" font="font:SmallestSystemFont" width="100" color="0xffffffff" />
+      <Label id="vote_average" font="font:SmallestSystemFont" width="100" color="0xffffffff" />
+      <Label id="release_date" font="font:SmallestSystemFont" width="200" color="0xffffffff" />
+    </LayoutGroup>
+  </children>
+
+</component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListListItemData" extends="ContentNode">
+ 
+  <interface> 
+    <field id="name" type="string" />
+    <field id="list_type" type="string" />
+    <field id="media_type" type="string" />
+  </interface>
+
+</component>

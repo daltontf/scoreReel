@@ -15,6 +15,7 @@
    <LeagueListItemData name="NCAA Women" url="http://site.web.api.espn.com/apis/site/v2/sports/soccer/usa.ncaa.w.1/scoreboard"/> 
    <LeagueListItemData name="U.S. Open Cup" url="http://site.api.espn.com/apis/site/v2/sports/soccer/usa.open/scoreboard"/>
    <LeagueListItemData name="Leagues Cup" url="http://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.leagues.cup/scoreboard"/>
+   <LeagueListItemData name="CONCACAF Champions Cup" url="http://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.champions/scoreboard"/>
    <LeagueListItemData name="UEFA Europa League" url="http://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard"/>
    <LeagueListItemData name="UEFA Champions League" url="http://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard"/>  
    <LeagueListItemData name="FIFA Club World Cup" url="http://site.api.espn.com/apis/site/v2/sports/soccer/fifa.cwc/scoreboard"/>          

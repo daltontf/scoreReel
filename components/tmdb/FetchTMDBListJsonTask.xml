@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name = "FetchTMDBListJsonTask" extends = "Task" >
+
+  <script type="text/brightscript" uri="pkg:/components/tmdb/FetchTMDBListJsonTask.brs" />
+
+  <interface>
+    <field id = "list_type" type = "string" />
+    <field id = "media_type" type = "string" />
+    <field id = "content" type = "node" />
+  </interface>
+
+</component>
