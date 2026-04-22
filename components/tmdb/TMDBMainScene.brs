@@ -20,8 +20,9 @@ sub setListContent()
 end sub
 
 sub setDetailContent()
-    m.details.text = m.fetchTMDBDetailsJsonTask.content
-    m.details.SetFocus(true)
+  m.details.SetFocus(true)
+  m.details.text = ""
+  m.details.text = m.fetchTMDBDetailsJsonTask.content
 end sub
 
 sub listItemSelected()

@@ -15,7 +15,6 @@ sub getContent()
   detailRequest.AddHeader("Authorization", "Bearer " + m.tmdb_api_key)
   detailRequest.AddHeader("accept", "application/json")
   payload = detailRequest.GetToString()
-
   response = ParseJson(payload)  
    
    if m.top.media_type = "movie" then
@@ -25,4 +24,30 @@ sub getContent()
     else
       m.top.content = "Unknown Media Type"
     end if
+
+  detailRequest = CreateObject("roUrlTransfer")
+  detailRequest.setURL("https://api.themoviedb.org/3/" + m.top.media_type + "/" + m.top.id + "/watch/providers?language=en-US")
+  detailRequest.AddHeader("Authorization", "Bearer " + m.tmdb_api_key)
+  detailRequest.AddHeader("accept", "application/json")
+  payload = detailRequest.GetToString()
+  response = ParseJson(payload)  
+
+  appendProviderType(response, "Free: ", "free")
+  appendProviderType(response, "Free with ads: ", "ads")
+  appendProviderType(response, "Premium: ", "flatrate")
+end sub
+
+sub appendProviderType(response, prefix as String, providerType as String)
+  m.top.content = m.top.content + Chr(10) + prefix
+
+  if response.results.count() = 0 or response.results.US[providerType] = invalid then
+    m.top.content = m.top.content + "None"
+    return
+  end if
+
+  for each provider in response.results.US[providerType]
+    m.top.content = m.top.content + provider.provider_name + ", "
+  end for
+  ' Remove the trailing comma and space
+  m.top.content = left(m.top.content, len(m.top.content) - 2)
 end sub

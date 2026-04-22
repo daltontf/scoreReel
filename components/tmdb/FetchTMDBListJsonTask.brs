@@ -24,11 +24,21 @@ sub getContent()
   while true
     response = getPage(page)
 
+    arr = CreateObject("roArray", response.total_results, false)
+    
     For Each result in response.results
-      if result.Count() = 0 then
-        continue for
-      end if
-      
+      arr.Push(result)
+    end for
+    if page < response.total_pages
+      page = page + 1
+    else
+      exit while 
+    end if
+  end while
+  
+  arr.SortBy("vote_average", "r")
+
+  For Each result in arr
       dataItem = data.CreateChild("MediaListItemData")
       dataItem.id = result.id
       if m.top.media_type = "movies" then
@@ -54,13 +64,6 @@ sub getContent()
       dataItem.release_date = "Unknown Release Date"
       end if
     end for
-
-    if page < response.total_pages
-      page = page + 1
-    else
-      exit while 
-    end if
-  end while
   
   m.top.content = data
 
