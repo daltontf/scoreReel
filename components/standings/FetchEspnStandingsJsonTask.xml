@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name = "FetchEspnStandingsJsonTask" extends = "Task" >
+
+  <script type="text/brightscript" uri="pkg:/components/standings/FetchEspnStandingsJsonTask.brs" />
+
+  <interface>
+    <field id="url" type="string" />
+    <field id="stats" type="assocarray"/>
+    <field id="content" type="node" />
+  </interface>
+
+</component>

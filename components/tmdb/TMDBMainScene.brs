@@ -51,7 +51,11 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     end if
     if key = "right" then
       if m.listMarkupList.hasFocus() then
-        m.details.SetFocus(true)
+        if m.details.text <> "" then
+           m.details.SetFocus(true)  
+        else if m.mediaMarkupList.content <> invalid and m.mediaMarkupList.content.getChildCount() > 0 then
+           m.mediaMarkupList.SetFocus(true)  
+        end if
       else if m.details.hasFocus()
         m.mediaMarkupList.SetFocus(true)  
       end if
@@ -59,7 +63,11 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     end if
     if key = "left" then
       if m.mediaMarkupList.hasFocus() then
-        m.details.SetFocus(true)
+        if m.details.text <> "" then
+           m.details.SetFocus(true)  
+        else
+           m.listMarkupList.SetFocus(true)  
+        end if
       else if m.details.hasFocus()
         m.listMarkupList.SetFocus(true) 
       end if

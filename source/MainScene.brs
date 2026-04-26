@@ -9,6 +9,14 @@ function init()
     tab2 = content.createChild("ContentNode")
     tab2.title = "Sport Scores from ESPN"
     tab2.id = "scores"
+
+    tab3 = content.createChild("ContentNode")
+    tab3.title = "Sport Standings from ESPN"
+    tab3.id = "standings"
+
+    tab4 = content.createChild("ContentNode")
+    tab4.title = "Local Weather"
+    tab4.id = "weather"
     
     m.tabs.content = content
     m.tabs.observeField("itemSelected", "onTabSelected")
@@ -29,6 +37,10 @@ sub onTabSelected()
         node = CreateObject("roSGNode", "TMDBMainScene")
     else if item = "scores" then
         node = CreateObject("roSGNode", "ScoreScene")
+    else if item = "standings" then
+        node = CreateObject("roSGNode", "StandingsScene")    
+    else if item = "weather" then
+        node = CreateObject("roSGNode", "WeatherMainScene")
     end if
 
     m.contentGroup.appendChild(node)

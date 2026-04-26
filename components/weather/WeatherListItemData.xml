@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="WeatherListItemData" extends="ContentNode">
+ 
+  <interface> 
+    <field id="startTime" type="string" />
+    <field id="temperature" type="string" />
+    <field id="probabilityOfPrecipitation" type="string" />
+    <field id="windSpeed" type="string" />
+    <field id="windDirection" type="string" />
+    <field id="shortForecast" type="string" />
+  </interface>
+
+</component>

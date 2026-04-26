@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="StandingsChildContent" extends="ContentNode">
+ 
+  <interface> 
+    <field id="childName" type="string" />
+    <field id="grandChildName" type="string" />
+    <field id="teamName" type="string" />
+    <field id="wins" type="string" />
+    <field id="losses" type="string" />
+    <field id="ties" type="string" />
+    <field id="otLosses" type="string" />
+    <field id="winPercent" type="string" />
+    <field id="gamesBehind" type="string" />
+    <field id="pointDifferential" type="string" />
+    <field id="gamesPlayed" type="string" />
+    <field id="points" type="string" />
+  </interface>
+
+</component>

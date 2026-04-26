@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<component name="WeatherMainScene" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/weather/WeatherMainScene.brs" />
+
+    <children>
+         <MarkupList
+          id="WeatherMarkupList"
+          itemComponentName="WeatherListItem"
+          itemSize="[1080, 25]"
+          itemSpacing="[0, 8]"
+          translation="[100,160]"
+          focusBitmapBlendColor = "0x99999999" 
+        />
+    </children>
+
+</component>

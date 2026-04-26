@@ -21,11 +21,9 @@ sub getContent()
   data = CreateObject("roSGNode", "ContentNode")
 
   page = 1
-  while true
-    response = getPage(page)
-
-    arr = CreateObject("roArray", response.total_results, false)
-    
+  response = getPage(page)
+  arr = CreateObject("roArray", response.total_results, false)
+  while true    
     For Each result in response.results
       arr.Push(result)
     end for
@@ -34,6 +32,7 @@ sub getContent()
     else
       exit while 
     end if
+    response = getPage(page)
   end while
   
   arr.SortBy("vote_average", "r")

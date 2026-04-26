@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="StandingsChild" extends="Group">
+ 
+  <interface> 
+    <field id="itemContent" type="node" onChange="itemContentChanged"/>
+  </interface>
+ 
+  <script type="text/brightscript" uri="pkg:/components/standings/StandingsChild.brs" />
+
+  <children> 
+    <Group>
+      <Label id="childName" font="font:MediumBoldSystemFont" width="300" color="0xffffffff" />
+      <Label id="grandChildName" font="font:SmallBoldSystemFont" width="300" color="0xffffffff" translation="[5, 0]" />
+      <Label id="teamName" font="font:SmallSystemFont" width="300" color="0xccccccff" translation="[5, 0]"/>
+      <Label id="wins" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[300, 0]" />
+      <Label id="losses" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[350, 0]" />
+      <Label id="ties" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[400, 0]" />
+      <Label id="otLosses" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[400, 0]" />
+      <Label id="winPercent" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[400, 0]" />
+      <Label id="gamesPlayed" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[450, 0]" />
+      <Label id="gamesBehind" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[520, 0]" />
+      <Label id="points" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[570, 0]" />
+      <Label id="pointDifferential" font="font:SmallSystemFont" width="300" color="0xffff00ff" translation="[620, 0]" />
+    </Group>
+  </children>
+
+</component>

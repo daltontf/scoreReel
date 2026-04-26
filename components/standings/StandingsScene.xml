@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<component name="StandingsScene" extends="Group" >
+
+  <script type="text/brightscript" uri="pkg:/components/standings/StandingsScene.brs" />
+  
+  <children>
+        <MarkupList
+          id="StandingsTypeMarkupList"
+          itemComponentName="LeagueStandingsType"
+          itemSize="[500, 30]"
+          itemSpacing="[0, 8]"
+          translation="[100,50]"
+          focusBitmapBlendColor = "0x99999999" 
+          numRows = "4"
+      >
+          <ContentNode role="content">
+            <LeagueStandingsTypeContent name="NFL Divisions"
+                url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=winpercent%3Adesc%2Cplayoffseed%3Aasc&startingseason=2004"
+                stats="wins,losses,ties,pointDifferential"
+            />   
+            <LeagueStandingsTypeContent name="NFL Playoffs"
+                url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&lang=en&contentorigin=espn&type=1&level=2&sort=conferencerank%3Aasc%2Cplayoffseed%3Aasc&startingseason=2004"
+                stats="wins,losses,ties,pointDifferential"
+            />  
+            <LeagueStandingsTypeContent name="UFL Standings"
+                url="http://site.web.api.espn.com/apis/v2/sports/football/ufl/standings?region=us&lang=en&contentorigin=espn&sort=winpercent%3Adesc"
+                stats="wins,losses,winPercent,pointDifferential"
+            />   
+            <LeagueStandingsTypeContent name="MLB Divisions"
+                url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=gamesbehind%3Aasc%2Cwinpercent%3Adesc%2Cplayoffseed%3Aasc"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential"
+            />   
+            <LeagueStandingsTypeContent name="MLB Wildcard" 
+                url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&lang=en&type=1&sort=gamesbehind/"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential"
+            />  
+            <LeagueStandingsTypeContent name="NBA Divisions"
+                url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=playoffseed%3Aasc"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential"
+            />  
+            <LeagueStandingsTypeContent name="NBA Conference"
+                url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&lang=en&contentorigin=espn&type=0&level=2&sort=playoffseed%3Aasc"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential"
+            />          
+            <LeagueStandingsTypeContent name="NHL Divisions"
+                url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc"
+                stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential"
+            />        
+            <LeagueStandingsTypeContent name="NHL Wildcard"
+                url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&lang=en&contentorigin=espn&type=3&level=2&sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc&seasontype=2"
+                stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential"
+            />
+            <LeagueStandingsTypeContent name="MLS Table"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/usa.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                stats="gamesPlayed,wins,losses,ties,points,pointDifferential"            
+            />
+            <LeagueStandingsTypeContent name="USLC Table"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/usa.usl.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc" 
+                stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
+            />
+            <LeagueStandingsTypeContent name="English Premier League Table"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
+            />
+            <LeagueStandingsTypeContent name="English League Championship Table"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.2/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
+            />
+            <LeagueStandingsTypeContent name="English League One Table"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.3/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
+            />
+            <LeagueStandingsTypeContent name="English League Two Table"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.4/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
+            />
+          </ContentNode>
+        </MarkupList>
+       
+        <MarkupList
+          id="StandingsMarkupList"
+          itemComponentName="StandingsChild"
+          itemSize="[1080, 25]"
+          itemSpacing="[0, 8]"
+          translation="[100,260]"
+          focusBitmapBlendColor = "0x99999999" 
+        />
+  </children>
+</component>
