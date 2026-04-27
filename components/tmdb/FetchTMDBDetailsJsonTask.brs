@@ -4,8 +4,8 @@ sub init()
   configFile = ReadAsciiFile("pkg:/source/secrets.json")
   config = ParseJSON(configFile)
 
-  m.tmdb_api_key = config.tmdb_api_key
-  m.tmdb_user_id = config.tmdb_user_id
+  m.tmdb_api_key = config.tmdb.api_key
+  m.tmdb_user_id = config.tmdb.user_id
   
 end sub
 
@@ -20,7 +20,10 @@ sub getContent()
    if m.top.media_type = "movie" then
       m.top.content = (response.title + Chr(10) + Chr(10) + response.overview + Chr(10) + Chr(10) + "Runtime: " + response.runtime.toStr() + " minutes")
     else if m.top.media_type = "tv" then
-      m.top.content = (response.name + Chr(10) + Chr(10) + response.overview + Chr(10) + Chr(10) + "Seasons: " + response.number_of_seasons.toStr() + Chr(10) + "Episodes: " + response.number_of_episodes.toStr() + Chr(10) + "First Air Date: " + response.first_air_date + Chr(10) + "Last Air Date: " + response.last_air_date)
+      m.top.content = (response.name + Chr(10) + Chr(10) + response.overview + Chr(10) + Chr(10) + "Seasons: " + response.number_of_seasons.toStr() + Chr(10) + "Episodes: " + response.number_of_episodes.toStr() + Chr(10) + "First Air Date: " + response.first_air_date)
+      if response.last_air_date <> invalid then
+        m.top.content = m.top.content + Chr(10) + "Last Air Date: " + response.last_air_date
+      end if  
     else
       m.top.content = "Unknown Media Type"
     end if

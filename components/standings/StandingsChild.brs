@@ -12,6 +12,7 @@ function itemContentChanged()
     m.pointDifferential.text = itemData.pointDifferential
     m.points.text = itemData.points
     m.otLosses.text = itemData.otLosses
+    m["Last Ten Games"].text = itemData["Last Ten Games"]
  end function
   
  function init() 
@@ -27,4 +28,5 @@ function itemContentChanged()
     m.pointDifferential = m.top.findNode("pointDifferential")
     m.points = m.top.findNode("points")
     m.otLosses = m.top.findNode("otLosses")
+    m["Last Ten Games"] = m.top.findNode("Last Ten Games")
  end function

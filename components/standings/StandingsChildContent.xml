@@ -14,6 +14,7 @@
     <field id="pointDifferential" type="string" />
     <field id="gamesPlayed" type="string" />
     <field id="points" type="string" />
+    <field id="Last Ten Games" type="string" />
   </interface>
 
 </component>

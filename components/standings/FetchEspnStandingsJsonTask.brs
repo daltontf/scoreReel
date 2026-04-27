@@ -17,7 +17,11 @@ sub processStandings(contentNode, parentItem, jsonNode)
         entryItem.teamName = entry.team.displayName
         for each stat in entry.stats
             if m.top.stats[stat.name] = true
-                entryItem[stat.name] = stat.displayValue
+                if stat.name = "Last Ten Games"
+                    entryItem[stat.name] = stat.summary 
+                else
+                    entryItem[stat.name] = stat.displayValue
+                end if
             end if
         end for
     end for

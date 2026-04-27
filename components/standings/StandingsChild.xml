@@ -21,6 +21,7 @@
       <Label id="gamesBehind" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[520, 0]" />
       <Label id="points" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[570, 0]" />
       <Label id="pointDifferential" font="font:SmallSystemFont" width="300" color="0xffff00ff" translation="[620, 0]" />
+      <Label id="Last Ten Games" font="font:SmallSystemFont" width="300" color="0xffff00ff" translation="[700, 0]" />
     </Group>
   </children>
 

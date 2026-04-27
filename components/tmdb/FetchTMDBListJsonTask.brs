@@ -4,8 +4,8 @@ sub init()
   configFile = ReadAsciiFile("pkg:/source/secrets.json")
   config = ParseJSON(configFile)
 
-  m.tmdb_api_key = config.tmdb_api_key
-  m.tmdb_user_id = config.tmdb_user_id
+  m.tmdb_api_key = config.tmdb.api_key
+  m.tmdb_user_id = config.tmdb.user_id
 end sub
 
 sub getPage(page as Integer) as Object
