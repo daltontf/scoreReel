@@ -8,6 +8,8 @@ end function
 
 sub setJsonContent()
     contentNode = CreateObject("roSGNode", "ContentNode")
+
+    lastDateString = ""
     
     For Each result in m.fetchWeatherJsonTask.jsonContent.properties.periods
 
@@ -16,7 +18,16 @@ sub setJsonContent()
         dateTime = CreateObject("roDateTime")
         dateTime.FromISO8601String(result.startTime)
 
-        dataItem.startTime = dateTime.asDateStringLoc("EEE y-MM-dd") + " " + dateTime.asTimeStringLoc("h:mm a")
+        dateString = dateTime.asDateStringLoc("EEE y-MM-dd")
+        if dateString <> lastDateString
+            dataItem.date = dateString
+            dataItem = contentNode.CreateChild("WeatherListItemData")
+            lastDateString = dateString
+        else
+            dataItem.date = ""
+        end if
+
+        dataItem.startTime = dateTime.asTimeStringLoc("h:mm a")
         dataItem.temperature = Str(result.temperature) + " °F"
         dataItem.probabilityOfPrecipitation = Str(result.probabilityOfPrecipitation.value) + "%"
         dataItem.windSpeed = result.windSpeed

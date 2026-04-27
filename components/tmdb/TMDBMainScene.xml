@@ -23,12 +23,12 @@
           </ContentNode>
         </MarkupList>
 
-        <ScrollableText
+        <!-- <ScrollableText
           id="details"
           width="840"
           height="200"
           font = "font:SmallSystemFont"
-          translation="[380, 40]" />
+          translation="[380, 40]" /> -->
 
         <!-- <LayoutGroup id="sortButtons" layoutDirection="horizontal" translation="[25, 215]" itemSpacings="[0,0]">
           <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Title" minWidth="500" maxWidth="500"/>

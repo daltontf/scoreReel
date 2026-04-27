@@ -7,10 +7,11 @@
          <MarkupList
           id="WeatherMarkupList"
           itemComponentName="WeatherListItem"
-          itemSize="[1080, 25]"
-          itemSpacing="[0, 8]"
-          translation="[100,160]"
+          itemSize="[1080, 24]"
+          itemSpacing="[0, 6]"
+          translation="[100,150]"
           focusBitmapBlendColor = "0x99999999" 
+          numRows = "25"
         />
     </children>
 

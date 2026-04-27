@@ -2,6 +2,7 @@
 <component name="WeatherListItemData" extends="ContentNode">
  
   <interface> 
+    <field id="date" type="string" />
     <field id="startTime" type="string" />
     <field id="temperature" type="string" />
     <field id="probabilityOfPrecipitation" type="string" />

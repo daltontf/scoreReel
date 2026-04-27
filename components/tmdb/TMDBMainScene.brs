@@ -1,7 +1,6 @@
 function init()
     m.listMarkupList = m.top.findNode("ListMarkupList")
     m.mediaMarkupList = m.top.findNode("MediaMarkupList")
-    m.details = m.top.findNode("details")
 
     m.fetchTMDBListJsonTask = CreateObject("roSGNode", "FetchTMDBListJsonTask")
     m.fetchTMDBListJsonTask.ObserveField("arrayContent", "setListContent")
@@ -50,23 +49,42 @@ sub setListContent()
     m.mediaMarkupList.content = contentNode
 end sub
 
-sub appendProviderType(response, prefix as String, providerType as String)
-  m.top.content = m.top.content + Chr(10) + prefix
+function appendProviderType(response, prefix as String, providerType as String)
+  content = Chr(10) + prefix
 
   if response.results.count() = 0 or response.results.US[providerType] = invalid then
-    m.top.content = m.top.content + "None"
-    return
+    content = content + "None"
+    return content
   end if
 
   for each provider in response.results.US[providerType]
-    m.top.content = m.top.content + provider.provider_name + ", "
+    content = content + provider.provider_name + ", "
   end for
   ' Remove the trailing comma and space
-  m.top.content = left(m.top.content, len(m.top.content) - 2)
+  content = left(content, len(content) - 2)
+  return content
+end function
+
+sub resetScrollText()
+  m.details = m.top.findNode("details")
+  if m.details <> invalid
+    m.top.removeChild(m.details)
+  end if
+  
+  m.details = createObject("roSGNode", "ScrollableText")
+  m.details.font = "font:SmallestSystemFont"
+  m.details.id = "details"
+  m.details.translation = [380, 40]
+  m.details.font = "font:SmallSystemFont"
+  m.details.visible = true
+  m.details.width = 840
+  m.details.height = 200
+  m.top.appendChild(m.details)
 end sub
 
 sub setDetailContent()
   media_type = m.fetchTMDBDetailsJsonTask.media_type
+  response = m.fetchTMDBDetailsJsonTask.jsonContent
 
   if media_type = "movie" then
       detailText = (response.title + Chr(10) + Chr(10) + response.overview + Chr(10) + Chr(10) + "Runtime: " + response.runtime.toStr() + " minutes")
@@ -79,16 +97,13 @@ sub setDetailContent()
       detailText = "Unknown Media Type"
     end if
 
-  detailRequest = CreateObject("roUrlTransfer")
-  detailRequest.setURL("https://api.themoviedb.org/3/" + media_type + "/" + m.fetchTMDBDetailsJsonTask.id + "/watch/providers?language=en-US")
-  detailRequest.AddHeader("Authorization", "Bearer " + m.tmdb_api_key)
-  detailRequest.AddHeader("accept", "application/json")
-  payload = detailRequest.GetToString()
-  response = ParseJson(payload)  
+  providersResponse = m.fetchTMDBDetailsJsonTask.providerContent
 
-  appendProviderType(response, "Free: ", "free")
-  appendProviderType(response, "Free with ads: ", "ads")
-  appendProviderType(response, "Premium: ", "flatrate")
+  detailText = detailText + appendProviderType(providersResponse, "Free: ", "free")
+  detailText = detailText + appendProviderType(providersResponse, "Free with ads: ", "ads")
+  detailText = detailText + appendProviderType(providersResponse, "Premium: ", "flatrate")
+
+  resetScrollText()
 
   m.details.SetFocus(true)
   m.details.text = invalid
@@ -96,7 +111,9 @@ sub setDetailContent()
 end sub
 
 sub listItemSelected()
-  m.details.text = ""
+  if m.details <> invalid
+    m.details.text = ""
+  end if
   focused = m.listMarkupList.content.getChild(m.listMarkupList.itemFocused)  
   m.FetchTMDBListJsonTask.list_type = focused.list_type
   m.FetchTMDBListJsonTask.media_type = focused.media_type
@@ -106,7 +123,9 @@ sub listItemSelected()
 end sub
 
 sub onMediaItemSelected()
-  m.details.text = ""
+  if m.details <> invalid
+    m.details.text = ""
+  end if
   focused = m.mediaMarkupList.content.getChild(m.mediaMarkupList.itemFocused) 
   m.fetchTMDBDetailsJsonTask.media_type = focused.media_type
   m.fetchTMDBDetailsJsonTask.id = focused.id
@@ -121,7 +140,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     end if
     if key = "right" then
       if m.listMarkupList.hasFocus() then
-        if m.details.text <> "" then
+        if m.details <> invalid and m.details.text <> "" then
            m.details.SetFocus(true)  
         else if m.mediaMarkupList.content <> invalid and m.mediaMarkupList.content.getChildCount() > 0 then
            m.mediaMarkupList.SetFocus(true)  
@@ -133,7 +152,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     end if
     if key = "left" then
       if m.mediaMarkupList.hasFocus() then
-        if m.details.text <> "" then
+        if m.details <> invalid and m.details.text <> "" then
            m.details.SetFocus(true)  
         else
            m.listMarkupList.SetFocus(true)  
