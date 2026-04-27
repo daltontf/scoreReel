@@ -16,87 +16,87 @@
       >
           <ContentNode role="content">
             <LeagueStandingsTypeContent name="NFL Divisions"
-                url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=winpercent%3Adesc%2Cplayoffseed%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=winpercent%3Adesc%2Cplayoffseed%3Aasc"
                 stats="wins,losses,ties,pointDifferential"
             />   
             <LeagueStandingsTypeContent name="NFL Playoffs"
-                url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&lang=en&contentorigin=espn&type=1&level=2&sort=conferencerank%3Aasc%2Cplayoffseed%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=1&amp;level=2&amp;sort=conferencerank%3Aasc%2Cplayoffseed%3Aasc"
                 stats="wins,losses,ties,pointDifferential"
             />  
             <LeagueStandingsTypeContent name="UFL Standings"
-                url="http://site.web.api.espn.com/apis/v2/sports/football/ufl/standings?region=us&lang=en&contentorigin=espn&sort=winpercent%3Adesc"
+                url="http://site.web.api.espn.com/apis/v2/sports/football/ufl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=winpercent%3Adesc"
                 stats="wins,losses,winPercent,pointDifferential"
             />   
             <LeagueStandingsTypeContent name="MLB Divisions"
-                url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=gamesbehind%3Aasc%2Cwinpercent%3Adesc%2Cplayoffseed%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=gamesbehind%3Aasc%2Cwinpercent%3Adesc%2Cplayoffseed%3Aasc"
                 stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
             />   
             <LeagueStandingsTypeContent name="MLB Wildcard" 
-                url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&lang=en&type=1&sort=gamesbehind/"
+                url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&amp;lang=en&amp;type=1&amp;sort=gamesbehind/"
                 stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
             />  
             <LeagueStandingsTypeContent name="NBA Divisions"
-                url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=playoffseed%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=playoffseed%3Aasc"
                 stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
             />  
             <LeagueStandingsTypeContent name="NBA Conference"
-                url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&lang=en&contentorigin=espn&type=0&level=2&sort=playoffseed%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=2&amp;sort=playoffseed%3Aasc"
                 stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
             />          
             <LeagueStandingsTypeContent name="NHL Divisions"
-                url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc"
+                url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc"
                 stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential,Last Ten Games"
             />        
             <LeagueStandingsTypeContent name="NHL Wildcard"
-                url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&lang=en&contentorigin=espn&type=3&level=2&sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc&seasontype=2"
+                url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=3&amp;level=2&amp;sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc&amp;seasontype=2"
                 stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential,Last Ten Games"
             />
             <LeagueStandingsTypeContent name="MLS Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/usa.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/usa.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"            
             />
             <LeagueStandingsTypeContent name="USL Championship Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/usa.usl.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc" 
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/usa.usl.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc" 
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="NWSL Table"
-                url="https://site.web.api.espn.com/apis/v2/sports/soccer/usa.nwsl/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc" 
+                url="https://site.web.api.espn.com/apis/v2/sports/soccer/usa.nwsl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc" 
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="English Premier League Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="English League Championship Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.2/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.2/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="English League One Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.3/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.3/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="English League Two Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.4/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/eng.4/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="German Bundesliga Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/ger.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/ger.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="Italian Serie A Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/ita.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/ita.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="Spanish LALIGA Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/esp.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/esp.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="French Ligue 1 Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/fra.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/fra.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
             <LeagueStandingsTypeContent name="Mexican Liga MX Table"
-                url="http://site.web.api.espn.com/apis/v2/sports/soccer/mex.1/standings?region=us&lang=en&contentorigin=espn&sort=rank%3Aasc"
+                url="http://site.web.api.espn.com/apis/v2/sports/soccer/mex.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"
                 stats="gamesPlayed,wins,losses,ties,points,pointDifferential"
             />
           </ContentNode>

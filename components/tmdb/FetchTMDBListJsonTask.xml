@@ -7,7 +7,7 @@
   <interface>
     <field id = "list_type" type = "string" />
     <field id = "media_type" type = "string" />
-    <field id = "content" type = "node" />
+    <field id = "arrayContent" type = "array" />
   </interface>
 
 </component>

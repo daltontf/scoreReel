@@ -4,10 +4,10 @@ function init()
     m.details = m.top.findNode("details")
 
     m.fetchTMDBListJsonTask = CreateObject("roSGNode", "FetchTMDBListJsonTask")
-    m.fetchTMDBListJsonTask.ObserveField("content", "setListContent")
+    m.fetchTMDBListJsonTask.ObserveField("arrayContent", "setListContent")
 
     m.fetchTMDBDetailsJsonTask = CreateObject("roSGNode", "FetchTMDBDetailsJsonTask")
-    m.fetchTMDBDetailsJsonTask.ObserveField("content", "setDetailContent")
+    m.fetchTMDBDetailsJsonTask.ObserveField("jsonContent", "setDetailContent")
 
     m.listMarkupList.observeField("itemSelected", "listItemSelected")
     m.mediaMarkupList.observeField("itemSelected", "onMediaItemSelected")
@@ -16,13 +16,83 @@ function init()
 end function
 
 sub setListContent()
-    m.mediaMarkupList.content = m.fetchTMDBListJsonTask.content
+    contentNode = CreateObject("roSGNode", "ContentNode")
+
+    media_type = m.FetchTMDBListJsonTask.media_type
+
+     For Each result in m.FetchTMDBListJsonTask.arrayContent
+      dataItem = contentNode.CreateChild("MediaListItemData")
+      dataItem.id = result.id
+      if media_type = "movies" then
+        dataItem.media_type = "movie"
+      else 
+        dataItem.media_type = media_type
+      end if
+      if (result.title <> invalid)
+        dataItem.title = result.title
+      else if (result.name <> invalid)
+        dataItem.title = result.name
+      else
+        dataItem.title = "Unknown Title"
+      end if
+      
+      dataItem.popularity = result.popularity
+      dataItem.vote_average = result.vote_average
+      if (result.release_date <> invalid)
+        dataItem.release_date = result.release_date
+      else if (result.first_air_date <> invalid)
+        dataItem.release_date = result.first_air_date
+      else
+      dataItem.release_date = "Unknown Release Date"
+      end if
+    end for
+
+    m.mediaMarkupList.content = contentNode
+end sub
+
+sub appendProviderType(response, prefix as String, providerType as String)
+  m.top.content = m.top.content + Chr(10) + prefix
+
+  if response.results.count() = 0 or response.results.US[providerType] = invalid then
+    m.top.content = m.top.content + "None"
+    return
+  end if
+
+  for each provider in response.results.US[providerType]
+    m.top.content = m.top.content + provider.provider_name + ", "
+  end for
+  ' Remove the trailing comma and space
+  m.top.content = left(m.top.content, len(m.top.content) - 2)
 end sub
 
 sub setDetailContent()
+  media_type = m.fetchTMDBDetailsJsonTask.media_type
+
+  if media_type = "movie" then
+      detailText = (response.title + Chr(10) + Chr(10) + response.overview + Chr(10) + Chr(10) + "Runtime: " + response.runtime.toStr() + " minutes")
+    else if media_type = "tv" then
+      detailText = (response.name + Chr(10) + Chr(10) + response.overview + Chr(10) + Chr(10) + "Seasons: " + response.number_of_seasons.toStr() + Chr(10) + "Episodes: " + response.number_of_episodes.toStr() + Chr(10) + "First Air Date: " + response.first_air_date)
+      if response.last_air_date <> invalid then
+        detailText = detailText + Chr(10) + "Last Air Date: " + response.last_air_date
+      end if  
+    else
+      detailText = "Unknown Media Type"
+    end if
+
+  detailRequest = CreateObject("roUrlTransfer")
+  detailRequest.setURL("https://api.themoviedb.org/3/" + media_type + "/" + m.fetchTMDBDetailsJsonTask.id + "/watch/providers?language=en-US")
+  detailRequest.AddHeader("Authorization", "Bearer " + m.tmdb_api_key)
+  detailRequest.AddHeader("accept", "application/json")
+  payload = detailRequest.GetToString()
+  response = ParseJson(payload)  
+
+  appendProviderType(response, "Free: ", "free")
+  appendProviderType(response, "Free with ads: ", "ads")
+  appendProviderType(response, "Premium: ", "flatrate")
+
   m.details.SetFocus(true)
-  m.details.text = ""
-  m.details.text = m.fetchTMDBDetailsJsonTask.content
+  m.details.text = invalid
+  m.details.text = detailText
 end sub
 
 sub listItemSelected()

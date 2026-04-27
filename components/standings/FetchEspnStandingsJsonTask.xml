@@ -7,7 +7,7 @@
   <interface>
     <field id="url" type="string" />
     <field id="stats" type="assocarray"/>
-    <field id="content" type="node" />
+    <field id="jsonContent" type="assocarray" />
   </interface>
 
 </component>

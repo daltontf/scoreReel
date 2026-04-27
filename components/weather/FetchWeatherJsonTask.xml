@@ -5,7 +5,7 @@
   <script type="text/brightscript" uri="pkg:/components/weather/FetchWeatherJsonTask.brs" />
 
   <interface>
-    <field id = "content" type = "node" />
+    <field id = "jsonContent" type = "assocarray" />
   </interface>
 
 </component>

@@ -6,7 +6,7 @@
 
   <interface>
     <field id = "media_type" type = "string" />
-    <field id = "content" type = "string" />
+    <field id = "jsonContent" type = "assocarray" />
   </interface>
 
 </component>

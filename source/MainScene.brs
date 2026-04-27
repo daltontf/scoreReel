@@ -1,6 +1,8 @@
-function init()
+function init() 
+    m.contentGroup = m.top.findNode("contentGroup")
+
     m.tabs = m.top.findNode("tabs")
- 
+
     content = CreateObject("roSGNode", "ContentNode")
     tab1 = content.createChild("ContentNode")
     tab1.title = "The Movie Database (TMDB)"
@@ -20,10 +22,22 @@ function init()
     
     m.tabs.content = content
     m.tabs.observeField("itemSelected", "onTabSelected")
-
-    m.contentGroup = m.top.findNode("contentGroup")
-
     m.tabs.SetFocus(true)
+end function
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+  if press and key = "back" then
+       count = m.contentGroup.getChildCount()
+        if count > 1
+            lastChild = m.contentGroup.getChild(count - 1)
+            m.contentGroup.removeChild(lastChild)
+        else
+            return false ' exit app if on main menu
+        end if  
+        m.tabs.visible = true
+        m.tabs.SetFocus(true)
+        return true   
+    end if
 end function
 
 sub onTabSelected()
@@ -31,7 +45,7 @@ sub onTabSelected()
     item = m.tabs.content.getChild(itemIndex).id
 
     ' Clear previous content
-    m.contentGroup.removeChildrenIndex(m.contentGroup.getChildCount(), 0)
+    m.tabs.visible = false
 
     if item = "tmdb" then
         node = CreateObject("roSGNode", "TMDBMainScene")
