@@ -7,6 +7,7 @@ function itemContentChanged()
    m.windSpeed.text = itemData.windSpeed
    m.windDirection.text = itemData.windDirection   
    m.shortForecast.text = itemData.shortForecast
+   m.icon.uri = itemData.iconUrl
  end function
   
  function init() 
@@ -17,4 +18,5 @@ function itemContentChanged()
    m.windSpeed = m.top.findNode("windSpeed")
    m.windDirection = m.top.findNode("windDirection")
    m.shortForecast = m.top.findNode("shortForecast")
+   m.icon = m.top.findNode("icon")
  end function

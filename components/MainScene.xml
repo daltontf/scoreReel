@@ -2,6 +2,11 @@
 
 <component name="MainScene" extends="Scene">
     <script type="text/brightscript" uri="pkg:/source/MainScene.brs" />
+
+    <interface>
+        <field id="appConfig" type="assocarray" />
+    </interface>
+
     <children>        
         <Group id="contentGroup">
             <LabelList

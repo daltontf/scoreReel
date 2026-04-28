@@ -145,7 +145,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         else if m.mediaMarkupList.content <> invalid and m.mediaMarkupList.content.getChildCount() > 0 then
            m.mediaMarkupList.SetFocus(true)  
         end if
-      else if m.details.hasFocus()
+      else if m.details <> invalid and m.details.hasFocus()
         m.mediaMarkupList.SetFocus(true)  
       end if
       return true

@@ -33,6 +33,7 @@ sub setJsonContent()
         dataItem.windSpeed = result.windSpeed
         dataItem.windDirection = result.windDirection
         dataItem.shortForecast = result.shortForecast
+        dataItem.iconUrl = result.icon
     end for
 
     m.WeatherMarkupList.content = contentNode

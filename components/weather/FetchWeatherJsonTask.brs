@@ -1,10 +1,7 @@
 sub init()
   m.top.functionName = "getJsonContent"
 
-  configFile = ReadAsciiFile("pkg:/source/secrets.json")
-  config = ParseJSON(configFile)
-
-  m.gridpoint_url = config.weather.gridpoint_url
+  m.gridpoint_url = m.global.appConfig.weather.gridpoint_url
 end sub
 
 sub getJsonContent()

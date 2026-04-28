@@ -9,6 +9,7 @@
     <field id="windSpeed" type="string" />
     <field id="windDirection" type="string" />
     <field id="shortForecast" type="string" />
+    <field id="iconUrl" type="string" />
   </interface>
 
 </component>

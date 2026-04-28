@@ -15,7 +15,8 @@
       <Label id="probabilityOfPrecipitation" font="font:SmallestSystemFont" width="100" color="0xffffffff" translation="[300, 0]" />
       <Label id="windSpeed" font="font:SmallestSystemFont" width="150" color="0xffffffff" translation="[405, 0]" />
       <Label id="windDirection" font="font:SmallestSystemFont" width="50" color="0xffffffff" translation="[555, 0]" />
-      <Label id="shortForecast" font="font:SmallestSystemFont" width="550" color="0xffffffff" translation="[605, 0]" />
+      <Poster id="icon" width="30" height="30" translation="[605, 0]" />
+      <Label id="shortForecast" font="font:SmallestSystemFont" width="550" color="0xffffffff" translation="[650, 0]" />
     </Group>
   </children>
 

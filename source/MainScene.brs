@@ -1,12 +1,18 @@
 function init() 
+    configFile = ReadAsciiFile("pkg:/source/secrets.json")
+    m.global.addFields({ appConfig: ParseJSON(configFile)})
+
     m.contentGroup = m.top.findNode("contentGroup")
 
     m.tabs = m.top.findNode("tabs")
 
     content = CreateObject("roSGNode", "ContentNode")
-    tab1 = content.createChild("ContentNode")
-    tab1.title = "The Movie Database (TMDB)"
-    tab1.id = "tmdb"
+
+    if m.global.appConfig <> invalid and m.global.appConfig.tmdb <> invalid then
+        tab1 = content.createChild("ContentNode")
+        tab1.title = "The Movie Database (TMDB)"
+        tab1.id = "tmdb"
+    end if
 
     tab2 = content.createChild("ContentNode")
     tab2.title = "Sport Scores from ESPN"
@@ -16,9 +22,11 @@ function init()
     tab3.title = "Sport Standings from ESPN"
     tab3.id = "standings"
 
-    tab4 = content.createChild("ContentNode")
-    tab4.title = "Local Weather"
-    tab4.id = "weather"
+    if m.global.appConfig <> invalid and m.global.appConfig.weather <> invalid then
+        tab4 = content.createChild("ContentNode")
+        tab4.title = "Local Weather"
+        tab4.id = "weather"
+    end if
     
     m.tabs.content = content
     m.tabs.observeField("itemSelected", "onTabSelected")
