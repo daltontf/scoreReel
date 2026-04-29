@@ -23,20 +23,13 @@
           </ContentNode>
         </MarkupList>
 
-        <!-- <ScrollableText
-          id="details"
-          width="840"
-          height="200"
-          font = "font:SmallSystemFont"
-          translation="[380, 40]" /> -->
-
-        <!-- <LayoutGroup id="sortButtons" layoutDirection="horizontal" translation="[25, 215]" itemSpacings="[0,0]">
-          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Title" minWidth="500" maxWidth="500"/>
-          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Popularity" minWidth="100" maxWidth="100"/>
-          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Rating" minWidth="100" maxWidth="100"/>
-          <Button textFont="font:SmallSystemFont" iconUri="" iconPosition="left" horizontalMargin="0" text="Release Date" minWidth="200" maxWidth="200"/>
-        </LayoutGroup> -->
-
+   
+    <LayoutGroup layoutDirection="horiz" vertAlignment="bottom" itemSpacings="[0, 0]" translation="[100,255]" >
+        <Label text="Title" font="font:SmallBoldSystemFont" width="500" color="0xffffffff" />
+        <Label text="Popularity" font="font:SmallBoldSystemFont" width="200" color="0xffffffff" />
+        <Label text="Vote Average" font="font:SmallBoldSystemFont" width="200" color="0xffffffff" />
+        <Label text="Release Date" font="font:SmallBoldSystemFont" width="200" color="0xffffffff" />
+    </LayoutGroup>
         <MarkupList
           id="MediaMarkupList"
           itemComponentName="MediaListItem"

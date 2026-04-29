@@ -9,7 +9,6 @@
 
   <children> 
     <Group >
-      <Label id="date" font="font:MediumBoldSystemFont" width="300" color="0xffffffff" />
       <Label id="startTime" font="font:SmallestSystemFont" width="200" color="0xffff00ff" />
       <Label id="temperature" font="font:SmallestSystemFont" width="100" color="0xffffffff" translation="[200, 0]"/>
       <Label id="probabilityOfPrecipitation" font="font:SmallestSystemFont" width="100" color="0xffffffff" translation="[300, 0]" />

@@ -13,6 +13,7 @@ function itemContentChanged()
     m.points.text = itemData.points
     m.otLosses.text = itemData.otLosses
     m["Last Ten Games"].text = itemData["Last Ten Games"]
+    m.streak.text = itemData.streak
  end function
   
  function init() 
@@ -29,4 +30,5 @@ function itemContentChanged()
     m.points = m.top.findNode("points")
     m.otLosses = m.top.findNode("otLosses")
     m["Last Ten Games"] = m.top.findNode("Last Ten Games")
+    m.streak = m.top.findNode("streak")
  end function

@@ -17,39 +17,39 @@
           <ContentNode role="content">
             <LeagueStandingsTypeContent name="NFL Divisions"
                 url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=winpercent%3Adesc%2Cplayoffseed%3Aasc"
-                stats="wins,losses,ties,pointDifferential"
+                stats="wins,losses,ties,pointDifferential,streak"
             />   
             <LeagueStandingsTypeContent name="NFL Playoffs"
                 url="http://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=1&amp;level=2&amp;sort=conferencerank%3Aasc%2Cplayoffseed%3Aasc"
-                stats="wins,losses,ties,pointDifferential"
+                stats="wins,losses,ties,pointDifferential,streak"
             />  
             <LeagueStandingsTypeContent name="UFL Standings"
                 url="http://site.web.api.espn.com/apis/v2/sports/football/ufl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=winpercent%3Adesc"
-                stats="wins,losses,winPercent,pointDifferential"
+                stats="wins,losses,winPercent,pointDifferential,streak"
             />   
             <LeagueStandingsTypeContent name="MLB Divisions"
                 url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=gamesbehind%3Aasc%2Cwinpercent%3Adesc%2Cplayoffseed%3Aasc"
-                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games,streak"
             />   
             <LeagueStandingsTypeContent name="MLB Wildcard" 
                 url="http://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?region=us&amp;lang=en&amp;type=1&amp;sort=gamesbehind/"
-                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games,streak"
             />  
             <LeagueStandingsTypeContent name="NBA Divisions"
                 url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=playoffseed%3Aasc"
-                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games,streak"
             />  
             <LeagueStandingsTypeContent name="NBA Conference"
                 url="http://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=2&amp;sort=playoffseed%3Aasc"
-                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games"
+                stats="wins,losses,winPercent,gamesBehind,pointDifferential,Last Ten Games,streak"
             />          
             <LeagueStandingsTypeContent name="NHL Divisions"
                 url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=0&amp;level=3&amp;sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc"
-                stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential,Last Ten Games"
+                stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential,Last Ten Games,streak"    
             />        
             <LeagueStandingsTypeContent name="NHL Wildcard"
                 url="http://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;type=3&amp;level=2&amp;sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc&amp;seasontype=2"
-                stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential,Last Ten Games"
+                stats="gamesPlayed,wins,losses,otLosses,points,pointDifferential,Last Ten Games,streak"
             />
             <LeagueStandingsTypeContent name="MLS Table"
                 url="http://site.web.api.espn.com/apis/v2/sports/soccer/usa.1/standings?region=us&amp;lang=en&amp;contentorigin=espn&amp;sort=rank%3Aasc"

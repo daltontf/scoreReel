@@ -20,8 +20,9 @@
       <Label id="gamesPlayed" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[550, 0]" />
       <Label id="gamesBehind" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[620, 0]" />
       <Label id="points" font="font:SmallSystemFont" width="50" color="0xffff00ff" translation="[670, 0]" />
-      <Label id="pointDifferential" font="font:SmallSystemFont" width="300" color="0xffff00ff" translation="[720, 0]" />
-      <Label id="Last Ten Games" font="font:SmallSystemFont" width="300" color="0xffff00ff" translation="[800, 0]" />
+      <Label id="pointDifferential" font="font:SmallSystemFont" width="120" color="0xffff00ff" translation="[720, 0]" />
+      <Label id="Last Ten Games" font="font:SmallSystemFont" width="120" color="0xffff00ff" translation="[800, 0]" />
+      <Label id="streak" font="font:SmallSystemFont" width="120" color="0xffff00ff" translation="[900, 0]" />
     </Group>
   </children>
 

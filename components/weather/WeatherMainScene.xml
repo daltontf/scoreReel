@@ -4,7 +4,8 @@
     <script type="text/brightscript" uri="pkg:/components/weather/WeatherMainScene.brs" />
 
     <children>
-         <MarkupList
+        <Label id="dateHeader" font="font:SmallBoldSystemFont" width="500" color="0xffffffff" translation="[100,120]"/>
+        <MarkupList
           id="WeatherMarkupList"
           itemComponentName="WeatherListItem"
           itemSize="[1080, 24]"

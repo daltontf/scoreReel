@@ -1,6 +1,5 @@
 function itemContentChanged() 
    itemData = m.top.itemContent
-   m.date.text = itemData.date
    m.startTime.text = itemData.startTime
    m.temperature.text = itemData.temperature
    m.probabilityOfPrecipitation.text = itemData.probabilityOfPrecipitation
@@ -11,7 +10,6 @@ function itemContentChanged()
  end function
   
  function init() 
-   m.date = m.top.findNode("date")
    m.startTime = m.top.findNode("startTime") 
    m.temperature = m.top.findNode("temperature")  
    m.probabilityOfPrecipitation = m.top.findNode("probabilityOfPrecipitation")

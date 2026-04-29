@@ -27,9 +27,9 @@ sub setListContent()
       else 
         dataItem.media_type = media_type
       end if
-      if (result.title <> invalid)
+      if result.title <> invalid
         dataItem.title = result.title
-      else if (result.name <> invalid)
+      else if result.name <> invalid
         dataItem.title = result.name
       else
         dataItem.title = "Unknown Title"
@@ -37,9 +37,9 @@ sub setListContent()
       
       dataItem.popularity = result.popularity
       dataItem.vote_average = result.vote_average
-      if (result.release_date <> invalid)
+      if result.release_date <> invalid
         dataItem.release_date = result.release_date
-      else if (result.first_air_date <> invalid)
+      else if result.first_air_date <> invalid
         dataItem.release_date = result.first_air_date
       else
       dataItem.release_date = "Unknown Release Date"
@@ -157,7 +157,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         else
            m.listMarkupList.SetFocus(true)  
         end if
-      else if m.details.hasFocus()
+      else if m.details <> invalid and m.details.hasFocus()
         m.listMarkupList.SetFocus(true) 
       end if
       return true
