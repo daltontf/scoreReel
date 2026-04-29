@@ -1,6 +1,7 @@
 function init()
     m.listMarkupList = m.top.findNode("ListMarkupList")
     m.mediaMarkupList = m.top.findNode("MediaMarkupList")
+    m.mediaMarkupHeader = m.top.findNode("MediaMarkupHeader")
 
     m.fetchTMDBListJsonTask = CreateObject("roSGNode", "FetchTMDBListJsonTask")
     m.fetchTMDBListJsonTask.ObserveField("arrayContent", "setListContent")
@@ -19,7 +20,7 @@ sub setListContent()
 
     media_type = m.FetchTMDBListJsonTask.media_type
 
-     For Each result in m.FetchTMDBListJsonTask.arrayContent
+    For Each result in m.FetchTMDBListJsonTask.arrayContent
       dataItem = contentNode.CreateChild("MediaListItemData")
       dataItem.id = result.id
       if media_type = "movies" then
@@ -46,6 +47,7 @@ sub setListContent()
       end if
     end for
 
+    m.mediaMarkupHeader.visible = true
     m.mediaMarkupList.content = contentNode
 end sub
 

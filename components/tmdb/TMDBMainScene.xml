@@ -24,11 +24,11 @@
         </MarkupList>
 
    
-    <LayoutGroup layoutDirection="horiz" vertAlignment="bottom" itemSpacings="[0, 0]" translation="[100,255]" >
-        <Label text="Title" font="font:SmallBoldSystemFont" width="500" color="0xffffffff" />
-        <Label text="Popularity" font="font:SmallBoldSystemFont" width="200" color="0xffffffff" />
-        <Label text="Vote Average" font="font:SmallBoldSystemFont" width="200" color="0xffffffff" />
-        <Label text="Release Date" font="font:SmallBoldSystemFont" width="200" color="0xffffffff" />
+    <LayoutGroup id="MediaMarkupHeader" visible="false" layoutDirection="horiz" vertAlignment="bottom" itemSpacings="[0, 0]" translation="[100,255]" >
+        <Label text="Title" font="font:SmallBoldSystemFont" width="500" color="0xccccccff" />
+        <Label text="Popularity" font="font:SmallBoldSystemFont" width="200" color="0xccccccff" />
+        <Label text="Vote Average" font="font:SmallBoldSystemFont" width="200" color="0xccccccff" />
+        <Label text="Release Date" font="font:SmallBoldSystemFont" width="200" color="0xccccccff" />
     </LayoutGroup>
         <MarkupList
           id="MediaMarkupList"

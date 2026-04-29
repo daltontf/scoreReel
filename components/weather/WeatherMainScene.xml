@@ -4,13 +4,13 @@
     <script type="text/brightscript" uri="pkg:/components/weather/WeatherMainScene.brs" />
 
     <children>
-        <Label id="dateHeader" font="font:SmallBoldSystemFont" width="500" color="0xffffffff" translation="[100,120]"/>
+        <Label id="dateHeader" font="font:SmallBoldSystemFont" width="500" color="0xffffffff" translation="[100,20]"/>
         <MarkupList
           id="WeatherMarkupList"
           itemComponentName="WeatherListItem"
-          itemSize="[1080, 24]"
-          itemSpacing="[0, 6]"
-          translation="[100,150]"
+          itemSize="[1080, 36]"
+          itemSpacing="[0, 2]"
+          translation="[100,50]"
           focusBitmapBlendColor = "0x99999999" 
           numRows = "25"
         />
