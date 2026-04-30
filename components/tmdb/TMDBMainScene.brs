@@ -13,7 +13,22 @@ function init()
     m.mediaMarkupList.observeField("itemSelected", "onMediaItemSelected")
 
     m.listMarkupList.SetFocus(true)
+
+    m.FetchTMDBListsJsonTask = CreateObject("roSGNode", "FetchTMDBListsJsonTask")
+    m.FetchTMDBListsJsonTask.ObserveField("jsonContent", "setListsContent")
+    m.FetchTMDBListsJsonTask.control = "RUN"
 end function
+
+sub setListsContent()
+  ' TODO - handle pagination if user has more than 20 lists
+  For Each result in m.FetchTMDBListsJsonTask.jsonContent.results
+    dataItem = m.listMarkupList.content.CreateChild("ListListItemData")
+    dataItem.id = result.id
+    dataItem.name = result.name
+    dataItem.media_type = result.list_type
+    dataItem.list_type = "user"
+  end for
+end sub
 
 sub setListContent()
     contentNode = CreateObject("roSGNode", "ContentNode")
@@ -23,10 +38,14 @@ sub setListContent()
     For Each result in m.FetchTMDBListJsonTask.arrayContent
       dataItem = contentNode.CreateChild("MediaListItemData")
       dataItem.id = result.id
-      if media_type = "movies" then
-        dataItem.media_type = "movie"
+      if result.media_type <> invalid
+        dataItem.media_type = result.media_type
       else 
-        dataItem.media_type = media_type
+        if media_type = "movies" then
+          dataItem.media_type = "movie"
+        else 
+          dataItem.media_type = media_type
+        end if
       end if
       if result.title <> invalid
         dataItem.title = result.title
@@ -49,12 +68,13 @@ sub setListContent()
 
     m.mediaMarkupHeader.visible = true
     m.mediaMarkupList.content = contentNode
+    m.mediaMarkupList.SetFocus(true)
 end sub
 
 function appendProviderType(response, prefix as String, providerType as String)
   content = Chr(10) + prefix
 
-  if response.results.count() = 0 or response.results.US[providerType] = invalid then
+  if response.results.count() = 0 or response.results.US = invalid or response.results.US[providerType] = invalid then
     content = content + "None"
     return content
   end if
@@ -80,7 +100,7 @@ sub resetScrollText()
   m.details.font = "font:SmallSystemFont"
   m.details.visible = true
   m.details.width = 840
-  m.details.height = 200
+  m.details.height = 190
   m.top.appendChild(m.details)
 end sub
 
@@ -116,12 +136,11 @@ sub listItemSelected()
   if m.details <> invalid
     m.details.text = ""
   end if
-  focused = m.listMarkupList.content.getChild(m.listMarkupList.itemFocused)  
+  focused = m.listMarkupList.content.getChild(m.listMarkupList.itemFocused) 
+  m.FetchTMDBListJsonTask.list_id = focused.id
   m.FetchTMDBListJsonTask.list_type = focused.list_type
   m.FetchTMDBListJsonTask.media_type = focused.media_type
   m.FetchTMDBListJsonTask.control = "RUN"
-  m.mediaMarkupList.SetFocus(true)
-
 end sub
 
 sub onMediaItemSelected()

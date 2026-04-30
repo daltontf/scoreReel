@@ -29,11 +29,11 @@ Need to create TMDB develop account for those values.
 
 Add the following to `secrets.json` file in the `/source` directory: 
 
-'''
+```
 "weather": {
      "gridpoint_url": <gridpoint URL from weather.gov>
 }
-'''
+```
 
 One way to determine this is the open `https://api.weather.gov/points/{latitude},{longitude}` where latitude and longitude are replaced with the coordinates of the desired location. The returned JSON will have a `properties` value with `forecastGridData` value with the URL.
 

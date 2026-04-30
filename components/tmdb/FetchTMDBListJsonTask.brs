@@ -7,7 +7,11 @@ end sub
 
 sub getPage(page as Integer) as Object
   searchRequest = CreateObject("roUrlTransfer")
-  searchRequest.setURL("https://api.themoviedb.org/3/account/" + m.tmdb_user_id + "/" + m.top.list_type + "/" + m.top.media_type + "?language=en-US&page=" + page.toStr())
+  if m.top.list_type <> "user" then
+    searchRequest.setURL("https://api.themoviedb.org/3/account/" + m.tmdb_user_id + "/" + m.top.list_type + "/" + m.top.media_type + "?language=en-US&page=" + page.toStr())
+  else
+    searchRequest.setURL("https://api.themoviedb.org/3/list/" + m.top.list_id.toStr() + "?language=en-US&page=" + page.toStr())
+  end if
   searchRequest.AddHeader("Authorization", "Bearer " + m.tmdb_api_key)
   searchRequest.AddHeader("accept", "application/json")
   payload = searchRequest.GetToString()
@@ -21,9 +25,16 @@ sub getArrayContent()
   arr = CreateObject("roArray", response.total_results, false)
   
   while true    
-    For Each result in response.results
+    if m.top.list_type = "user" then
+      results = response.items
+    else
+      results = response.results
+    end if
+    
+    For Each result in results
       arr.Push(result)
     end for
+    
     if page < response.total_pages
       page = page + 1
     else

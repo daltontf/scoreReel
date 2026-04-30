@@ -5,6 +5,7 @@
   <script type="text/brightscript" uri="pkg:/components/tmdb/FetchTMDBListJsonTask.brs" />
 
   <interface>
+    <field id = "list_id" type = "integer" />
     <field id = "list_type" type = "string" />
     <field id = "media_type" type = "string" />
     <field id = "arrayContent" type = "array" />
