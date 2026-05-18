@@ -9,7 +9,7 @@
 
   <children> 
     <LayoutGroup layoutDirection="horiz" vertAlignment="bottom" itemSpacings="[0, 0]" translation="[0,25]" >
-      <Label id="time" font="font:SmallestSystemFont" width="200" color="0xa0cc40ff" />
+      <Label id="time" font="font:SmallestSystemFont" width="250" color="0xbbff44ff" />
       <Label id="name" font="font:SmallestSystemFont" width="530" color="0xffff00ff" />
       <Label id="away_score" font="font:SmallestSystemFont" width="50" color="0xffffffff" />
       <Label id="home_score" font="font:SmallestSystemFont" width="50" color="0xffffffff" />

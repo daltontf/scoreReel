@@ -31,7 +31,7 @@ sub setScoreContent()
     event_date.FromISO8601String(event.date)
     event_date.FromSeconds(event_date.AsSeconds() - (event_date.GetTimeZoneOffset() * 60))
 
-    dataItem.time = event_date.asDateStringLoc("MM/dd/yy ") + event_date.asTimeStringLoc("h:mm a")
+    dataItem.time = event_date.asDateStringLoc("EEE MM/dd/yy ") + event_date.asTimeStringLoc("h:mm a")
 
     competition = event.competitions[0]
 
@@ -57,7 +57,7 @@ sub setScoreContent()
     dataItem = contentNode.CreateChild("ScoreListItemData")
     date = CreateObject("roDateTime")
     date.FromSeconds(date.AsSeconds() - (date.GetTimeZoneOffset() * 60) + (m.fetchJsonTask.date_offset * 86400))
-    dataItem.time = date.asDateStringLoc("MM/dd/yy")
+    dataItem.time = date.asDateStringLoc("EEE MM/dd/yy")
     dataItem.name = "No Competitions"
   end if
 
